@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main { // A classe agora se chama Main para corresponder ao arquivo Main.java
+
+    public static void main(String[] args) {
+        // Inicializa o Scanner para receber a entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("--- Conversor de Temperaturas ---");
+        System.out.print("Digite a temperatura em Celsius (ºC): ");
+        
+        // Lê a temperatura em Celsius (usando double para decimais)
+        double celsius = scanner.nextDouble();
+
+        // --- Fórmulas de Conversão ---
+        
+        // Conversão para Fahrenheit: (Celsius * 9/5) + 32
+        // Usar 9.0 / 5.0 garante uma divisão decimal correta.
+        double fahrenheit = (celsius * (9.0 / 5.0)) + 32;
+
+        // Conversão para Kelvin: Celsius + 273.15
+        double kelvin = celsius + 273.15;
+
+        scanner.close(); // Fecha o Scanner
+
+        // --- Exibir Resultados Formatados ---
+        
+        System.out.println("\n--- Resultados da Conversão ---");
+        
+        // Usando String.format("%.2f") para limitar a saída a duas casas decimais
+        String cFormatado = String.format("%.2f", celsius);
+        String fFormatado = String.format("%.2f", fahrenheit);
+        String kFormatado = String.format("%.2f", kelvin);
+        
+        System.out.println("Temperatura em Celsius: " + cFormatado + " ºC");
+        System.out.println("Temperatura em Fahrenheit: " + fFormatado + " ºF");
+        System.out.println("Temperatura em Kelvin: " + kFormatado + " K");
+    }
+}
